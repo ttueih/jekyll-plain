@@ -1,7 +1,11 @@
 # jekyll-plain
 
 Another simple, two-column template for Jekyll.
-The theme is built on [jekyll-simple](https://github.com/wild-flame/jekyll-simple).
+The theme layout is inherented from [jekyll-simple](https://github.com/wild-flame/jekyll-simple) and some new features are added:
+ + Mathjax to render math equation.
+ + Tagging system.
+ + New icon set from Font Awesome and selective google Fonts.
+ + CV page from [researcher](https://github.com/ankitsultana/researcher)
 
 ## Screenshots
 <img src="assets/Selection_001.png" width="50%">
@@ -67,7 +71,7 @@ The way Jekyll handle a post is quite inconvenient to me. Normally, we need to c
 Based on the given date as prefix of the filename, Jekyll will create a permanent link for it (put to `_sites/year/month/date` folder). 
 I find it more convenient to define date in the preamble of each post which allows me to modify it without messing aroud with permanent links.
 
-In this template, two other collections (`pages` and `projects`) are introduce along with the default `posts` collection. All markdown files which are put in `_pages` or `_projects` will be generated in `pages` or `projects` collection respectively.
+In this template, two other collections (`pages` and `projects`) are introduced along with the default `posts` collection. All markdown files which are put in `_pages` or `_projects` will be generated in `pages` or `projects` collection respectively.
 For each posts in these new collections, we need to specify a `date` variable in the preamble.
 It allows Jekyll to order all the posts correctly.
 
@@ -122,7 +126,7 @@ font-family: ['Lora', serif]
 # font-family: ["Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter", monospace]
 ```
 
-#### Number of posts for index page
+#### Number of posts on index page
 The number of posts which are listed in the index page can be controlled by the variable `max-home-items` in `_config.yml`.
 
 
