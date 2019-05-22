@@ -1,0 +1,26 @@
+# You can define your navigation here.
+
+home:
+  text: "Home"
+  link: "/"
+
+pages:
+  text: "Pages"
+  link: "/pages"
+
+posts:
+  text: "Posts"
+  link: "/posts"
+
+projects:
+  text: "Projects"
+  link: "/projects"
+
+about:
+  text: "About"
+  link: "/about"
+
+feed:
+  text: "RSS"
+  link: "/feed.xml"
+

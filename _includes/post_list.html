@@ -1,0 +1,45 @@
+{% assign posts = include.posts %}
+{% assign cur_limit = include.limit %}
+{% assign cnt = posts | size %}
+{% if cur_limit and cur_limit >= 0 %}
+{% assign final_limit = cur_limit %}
+{% else %}
+{% assign final_limit = cnt %}
+{% endif %}
+
+{% for post in posts limit:cur_limit %}
+<article class="post_card post">
+    <header class="post_header">
+    <h2 class="post_title"><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title}}</a></h2>
+    <time class="post_date">{{ post.date | date: "%d %B %Y, %A" }}</time>
+    </header>
+    <div class="post_excerpt">
+    <p>
+        {% if post.description %}
+        {{ post.description}}
+        {% else %}
+        {{ post.excerpt }}
+        {% endif %}
+        <a class="read-more" href="{{ post.url | prepend: site.baseurl }}"> »  </a>
+    </p>
+    </div>
+    <footer class="post_meta">
+    <!-- metadata post location -->
+    {% if post.location %}
+    <span class="meta-location">
+        <i class="fa fa-map-marker " aria-hidden= "true"></i>
+        <a href=https://www.google.com/maps/place/{{post.location}}">{{ post.location }}</a>
+    </span>
+    {% endif %}
+    <!-- metadata tags -->
+    {% assign count = post.tags | size %}
+    {% if post.tags and  count !=0 %}
+        <span class="meta-tag">
+        {% include tags.html tags=post.tags %}
+        </span>
+    {% endif %}
+
+    </footer>
+    <hr class="post-card-hr" />
+</article>
+{% endfor %}

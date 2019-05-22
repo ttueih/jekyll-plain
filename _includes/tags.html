@@ -1,0 +1,17 @@
+{% assign tags = include.tags %}
+{% assign cnt = tags | size %}
+{% assign idx = 0 %}
+<i class="fa fa-tag " aria-hidden="true"></i>
+{% for tag in tags%}
+  {% assign idx = idx | plus: 1 %}
+  {% for stag in site.tags  %}
+    {% if stag.name == tag %}
+      {% assign link = stag.url %}
+      {% break %}
+    {% endif %}
+  {% endfor %}
+  <a href={{ site.baseurl |append: link }}>{{tag}}</a>
+  {% if idx>0 and idx != cnt %}
+  |
+  {% endif %}
+{% endfor %}

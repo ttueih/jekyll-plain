@@ -1,0 +1,47 @@
+---
+layout: default
+comments: true
+---
+
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="article-header">
+    <div class="article-title" itemprop="name headline">{{ page.title }}</div>
+    <div class="article-meta">
+      <p class="article-meta-row">
+        <!-- metadata date -->
+        <span class="meta-date">
+        <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}
+        </time>
+        </span>
+      </p>
+      <p class="article-meta-row">
+        <!-- metadata author -->
+        {% if page.author %}
+        <i class="fa fa-pencil" aria-hidden="true"> </i>
+        <span class="meta-author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <span itemprop="name">
+                {{ page.author }}
+            </span>
+        </span>
+        {% endif %}
+        <!-- metadata tags -->
+        {% assign count = page.tags | size %}
+        {% if page.tags and  count !=0 %}
+          <span class="meta-tag">
+            {% include tags.html tags=page.tags %}
+          </span>
+        {% endif %}
+      </p>
+    </div>
+  </header>
+
+  <div class="article-content" itemprop="articleBody">
+    {{ page.content }}
+  </div>
+
+
+  <!-- <footer class="article-footer"> -->
+  <!-- </footer> -->
+  {% include dq.html %}
+
+</article>

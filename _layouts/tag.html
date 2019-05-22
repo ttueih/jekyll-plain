@@ -1,0 +1,19 @@
+---
+layout: default
+---
+
+<div class="home">
+  <div class="post-list">
+      <h1 class="post-list-title"> tag: <small><i>{{ page.name }}</i></small></h1>
+
+    {% assign everything = '' | split: '' %}
+    {% for set in site.collections %}
+      {% assign lbl  = set.label %}
+      {% assign list = site[lbl] | where_exp: "item", "item.tags contains page.name" %}
+      {% assign everything = everything | concat: list %}
+    {% endfor %}
+    {% assign sorted = everything | sort: 'date' | reverse %}
+    {% include post_list.html posts=sorted %}
+
+  </div>
+</div>

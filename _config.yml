@@ -1,0 +1,113 @@
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely need to edit after that.
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'jekyll serve'. If you change this file, please restart the server process.
+
+# Site settings
+title: "#ttueih"
+email: ttueih@gmail.com 
+description: > # this means to ignore newlines until "baseurl:"
+  Write an awesome description for your new site here. You can edit this
+  line in _config.yml. It will appear in your document head meta (for
+  Google search results) and in your feed.xml site description.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "http://ttuieh.github.io" # the base hostname & protocol for your site
+
+# Navigation section
+navigations: [home,pages,posts,projects,about ,feed]
+
+# Font family 
+font-family: ['Lora', serif]
+# font-family: ["Inconsolata", monospace]
+# font-family: ['Source Sans Pro', sans-serif]
+# font-family: ['Source Code Pro', monospace]
+# font-family: ["Lucida Sans Typewriter", "Lucida Console", monaco, "Bitstream Vera Sans Mono", monospace]
+# font-family: ["Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter", monospace]
+
+cv-font-family: ["Inconsolata", monospace]
+
+# Select your active Social Network Links.
+# Uncomment the links you want to show in the footer and add your information to each link.
+# You can reorder the items to define the link order.
+# If you want to add a new link that isn't here, you'll need to also edit the file _data/SocialNetworks.yml
+social_accounts:
+  # rss: true
+  email: "ttuieh@gmail.com"
+  github: ttueih
+  twitter: ttueih
+  # reddit: ttueih
+  # linkedin: ttueih
+  # xing: ttueih
+  stackoverflow: "11523888/ttueih"
+  researchgate: "ttueih"
+  # snapchat: ttueih
+  # instagram: ttueih
+  # youtube: user/ttueih
+  # spotify: ttueih
+  # telephone: +1111111111111
+  # steam: ttueih
+  # twitch: ttueih
+  # yelp: ttueih
+
+
+# Enable collections
+collections:
+  tags:
+    output: true
+    permalink: /:collection/:name
+  pages:
+    output: true
+    permalink: /:collection/:name
+  projects:
+    output: true
+    permalink: /:collection/:name
+
+
+defaults:
+  - scope:
+      path: ""
+      type: "tags"
+    values:
+      layout: "tag"
+  - scope:
+      path: ""
+      type: "projects"
+    values:
+      layout: "post"
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "post"
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+  - scope:
+      path: ""
+    values:
+      layout: "default"
+
+# Build settings
+markdown: kramdown
+kramdown:
+  math_engine: mathjax
+  input: GFM
+
+# Latex mathematic
+mathjax: true
+
+# Third-party services
+# just leave someone empty to disable it
+# google_analytics: 
+# disqus_shortname: tueih-github-io
+
+# used this for post_excerpt at index_page
+excerpt_separator: <!--description-->
+
+# set timezone
+timezone: Europe/Berlin
+

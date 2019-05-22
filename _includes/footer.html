@@ -1,0 +1,33 @@
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer center footer-icon">
+      <section class="small-font">
+          {% for acc in site.social_accounts %}
+            {% assign acc_key = acc[0] %}
+            {% assign acc_val = acc[1] %}
+            {% assign link = site.data.social_networks[acc_key] %}
+            {% if acc_key == "rss" %}
+              <a href="{{ '/feed.xml' | prepend: site.baseurl }}" title="{{ link.name }}">
+            {% elsif acc_key == 'yelp' %}
+              <a href="https://{{ acc_val }}.yelp.com" title="{{ link.name }}">
+            {% else %}
+              <a href="{{link.baseURL}}{{ acc_val }}" title="{{ link.name }}">
+            {% endif %}
+            <span class="fa-stack fa-lg" aria-hidden="true">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="{{ link.icon }} fa-stack-1x fa-inverse"></i>
+            </span>
+            <span class="sr-only">{{ link.name }}</span>
+            </a>
+          {% endfor %}
+      </section>
+    </div>
+    <div class="footer center footer-text">
+        <section class="small-font">
+            Theme <a href="https://github.com/ttueih/jekyll-plain"> Plain </a> by <a href="http://ttueih.github.io">ttueih</a>
+            © 2019
+            Powered by <a href="https://github.com/jekyll/jekyll">jekyll</a>
+            </section>
+     </div>
+  </div>
+</footer>

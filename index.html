@@ -1,0 +1,22 @@
+---
+layout: default
+title: Home
+---
+
+<div class="home">
+  <div class="post-list">
+
+    {% assign everything = '' | split: '' %}
+    {% for set in site.collections %}
+    {% assign lbl  = set.label %}
+      {% if lbl == 'tags' %}
+      {% continue %}
+      {% endif %}
+    {% assign list = site[lbl] %}
+    {% assign everything = everything | concat: list %}
+    {% endfor %}
+    {% assign sorted = everything | sort: 'date' | reverse %}
+    {% include post_list.html posts=sorted limit=5 %}
+
+  </div>
+</div>

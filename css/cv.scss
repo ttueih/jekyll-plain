@@ -1,0 +1,4 @@
+---
+---
+$base-font-family: {{ site.cv-font-family | join: "," }};
+@import "cv_style";

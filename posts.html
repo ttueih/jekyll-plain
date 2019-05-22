@@ -1,0 +1,12 @@
+---
+layout: default
+title: Posts
+---
+<div class="home">
+  <div class="post-list">
+    <h1 class="post-list-title"> Posts </h1>
+
+    {% assign sorted = site.posts | sort: 'date' | reverse %}
+    {% include post_list.html posts=sorted %}
+  </div>
+</div>
