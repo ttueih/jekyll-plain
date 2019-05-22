@@ -1,4 +1,6 @@
 # You can define your navigation here.
+# Each item have two keys: "text" which will appear on your website and "link" which is a relative url to your page.
+# You can define all needed items here and enable them or re-order them with the variable "navigations" in "_config.yml"
 
 home:
   text: "Home"

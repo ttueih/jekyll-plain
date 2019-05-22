@@ -16,7 +16,7 @@ title: Home
     {% assign everything = everything | concat: list %}
     {% endfor %}
     {% assign sorted = everything | sort: 'date' | reverse %}
-    {% include post_list.html posts=sorted limit=5 %}
+      {% include post_list.html posts=sorted limit=site.max-home-items %}
 
   </div>
 </div>

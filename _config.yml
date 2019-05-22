@@ -1,4 +1,4 @@
-# Welcome to Jekyll!
+# Welcome to Jekyll-Plain!
 #
 # This config file is meant for settings that affect your whole blog, values
 # which you are expected to set up once and rarely need to edit after that.
@@ -6,19 +6,22 @@
 # 'jekyll serve'. If you change this file, please restart the server process.
 
 # Site settings
-title: "#ttueih"
-email: ttueih@gmail.com 
+title: "Your Awesome Title"
+email: your_email@gmail.com 
 description: > # this means to ignore newlines until "baseurl:"
   Write an awesome description for your new site here. You can edit this
   line in _config.yml. It will appear in your document head meta (for
   Google search results) and in your feed.xml site description.
-baseurl: "" # the subpath of your site, e.g. /blog
+baseurl: "" # the subpath of your site, e.g. "/blog" or "" for without any subpath
 url: "http://ttuieh.github.io" # the base hostname & protocol for your site
 
 # Navigation section
+# You need to define navigation items in "_data/nav.yml" and then enable using the following variable.
 navigations: [home,pages,posts,projects,about ,feed]
 
-# Font family 
+# The font-family set here will have a global effect on the site.
+# For each of google fonts like Lora, Inconsolata, Source Sans Pro or Source Code Pro,
+# a corresponding script is added to site header to make sure the font is available at client side.
 font-family: ['Lora', serif]
 # font-family: ["Inconsolata", monospace]
 # font-family: ['Source Sans Pro', sans-serif]
@@ -26,12 +29,17 @@ font-family: ['Lora', serif]
 # font-family: ["Lucida Sans Typewriter", "Lucida Console", monaco, "Bitstream Vera Sans Mono", monospace]
 # font-family: ["Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter", monospace]
 
+# This configuration is for font-family of about page.
 cv-font-family: ["Inconsolata", monospace]
+
+# This is to limit the number of posts which should be showed in our home page.
+max-home-items: 5
+
 
 # Select your active Social Network Links.
 # Uncomment the links you want to show in the footer and add your information to each link.
 # You can reorder the items to define the link order.
-# If you want to add a new link that isn't here, you'll need to also edit the file _data/SocialNetworks.yml
+# If you want to add a new link that isn't here, you'll need to also edit the file _data/social_networks.yml
 social_accounts:
   # rss: true
   email: "ttuieh@gmail.com"
@@ -53,18 +61,23 @@ social_accounts:
 
 
 # Enable collections
+# you can add more collection or remove collection by configuring the below variables.
+# It is important that you keep 'tags' collection in order to let tag system work.
 collections:
   tags:
     output: true
     permalink: /:collection/:name
+    # For tags collection: each new tag will need a file with the same name in `_tags' folder. Just follow the format of the other tag files, such as `_tags/markdown.rm`.
   pages:
+    # all post inside _pages folder will be long to this collection.
     output: true
     permalink: /:collection/:name
   projects:
+    # all post inside _projects folder will be long to this collection.
     output: true
     permalink: /:collection/:name
 
-
+# Here we can define default layout for each of collections.
 defaults:
   - scope:
       path: ""
@@ -97,17 +110,12 @@ kramdown:
   math_engine: mathjax
   input: GFM
 
-# Latex mathematic
+# Enable the use of mathjax for this website.
 mathjax: true
 
-# Third-party services
-# just leave someone empty to disable it
-# google_analytics: 
-# disqus_shortname: tueih-github-io
-
 # used this for post_excerpt at index_page
+# add excerpt_separator to tell jekyll to which point the content will be shown in collection page.
 excerpt_separator: <!--description-->
 
 # set timezone
 timezone: Europe/Berlin
-
